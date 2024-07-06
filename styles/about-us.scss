@@ -1,0 +1,124 @@
+#about-us {
+  height: 70dvh;
+  perspective: 1000px;
+  overflow: hidden;
+  position: relative;
+  padding: 40px $s-px;
+
+  @media (min-width: 992px) {
+    padding: 40px $px;
+    height: 100dvh;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    color: $yellow;
+
+    @media (min-width: 992px) {
+      font-size: 40px;
+    }
+
+    span {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2.5px;
+        transform: scaleX(.5);
+        background-color: $yellow;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+    transform: rotateY(0deg); /* Assure que la face avant est visible initialement */
+  }
+  
+  .flip-card-back {
+    background-color: #555;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: .4);
+    text-align: center;
+    padding: 0 $s-px;
+    
+    @media (min-width: 992px) {
+      padding: 0 $px;
+    }
+  }
+  
+  .front-text {
+    z-index: 1;
+  }
+  
+  .back-text {
+    z-index: 0;
+    flex-direction: column;
+    gap: 10px;
+    
+    @media (min-width: 992px) {
+      gap: 30px;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: justify;
+      
+      @media (min-width: 992px) {
+        font-size: 20px;
+      }
+    }
+  }
+  
+}

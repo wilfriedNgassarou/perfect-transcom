@@ -21,12 +21,10 @@ const heroBg = document.querySelector('.hero-bg')
 const heroGirl = document.querySelector('.hero-girl')
 const loaderWrapper = document.querySelector('.loader-wrapper')
 
-document.addEventListener('DOMContentLoaded', (e) => {
-  animateHero()
-})
 
 window.addEventListener('load', () => {
   loaderWrapper.style.display = 'none' ;
+  animateHero()
 })
 
 

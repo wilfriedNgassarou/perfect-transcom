@@ -15,6 +15,29 @@ header {
     overflow: visible;
   }
 
+  .langage-switcher {
+    a {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+
+      &:hover::after {
+        transform: scaleX(0) !important;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      svg {
+        height: 25px;
+        width: 25px;
+      }
+    }
+  }
+
   .logo-container {
     display: block;
     text-decoration: none;
